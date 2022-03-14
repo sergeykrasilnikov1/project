@@ -1463,6 +1463,7 @@ input[type="search"]::placeholder {color: rgba(255, 255, 255, 0.85);}
 .contacts {
   padding-top: 5px;
   padding-bottom: 20px;
+  border-top: 1px solid #CACACA;
 }
 
 
@@ -1873,6 +1874,11 @@ display: none !important;
     margin-bottom: 132px;
   }
 
+  .about__container {
+    padding-top: 200px;
+    padding-bottom: 71px;
+  }
+
   .country-info {
     max-width: 100%;
   }
@@ -2130,11 +2136,6 @@ display: none !important;
     width: 188px;
   }
 
-  .about__container {
-    padding-top: 200px;
-    padding-bottom: 71px;
-  }
-
   .about__descr {
     max-width: 100%;
   }
@@ -2214,6 +2215,7 @@ display: none !important;
   .events {
     padding-top: 83px;
     padding-bottom: 30px;
+    padding-right: 50px;
   }
 
   .events__item {
@@ -2269,7 +2271,7 @@ display: none !important;
 
   .projects {
     padding-top: 48px;
-    padding-bottom: 0;
+    padding-bottom: 77px;
   }
 
   .projects__descr {
@@ -2286,7 +2288,12 @@ display: none !important;
   }
 
   .contacts {
+    padding-top: 35px;
     margin-bottom: 24px;
+  }
+
+  .contacts-text {
+    padding-top: 0;
   }
 
   .contacts-form__btn {
@@ -2495,7 +2502,7 @@ display: none !important;
 
   .projects {
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 80px;
   }
 
   .projects__descr {
@@ -2926,6 +2933,7 @@ display: none !important;
       padding-top: 30px;
       margin-bottom: 0;
       padding-bottom: 0;
+      border-top: none;
     }
 
     .contacts-text__address {
