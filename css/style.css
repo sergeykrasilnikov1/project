@@ -2431,6 +2431,10 @@ display: none !important;
     display: none;
   }
 
+  .events__button-prev {
+    display: none;
+  }
+
   .events__head-title {
     padding: 0;
   }
