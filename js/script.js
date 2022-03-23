@@ -1,3 +1,90 @@
+$(function() {
+  /* Main menu */
+  $('.header__up-nav-link').click(function () {
+      let href = $(this).attr('href').substr(1);
+      let to = `.${href}`
+      $('body, html').animate({scrollTop : $(to).offset().top} ,1000);
+      // closing the menu after clicking on the item
+      // the delay is necessary with a purpose so that when you rewind, the closing of the menu is not visible
+      setTimeout(function(){
+          $('#burger-menu-toggle').removeClass('burger-menu-open');
+          $('.header__up-nav-log').removeClass('header__up-nav-log-open');
+      }, 1000)
+      return false;
+  });
+});
+
+/* Burger Menu */
+document.getElementById('burger-menu-toggle').addEventListener('click', function(event){
+  this.classList.toggle('burger-menu-open');
+  document.querySelector('.header__up-nav-log').classList.toggle('header__up-nav-log-open');
+});
+
+/* Search */
+document.querySelector('.header__up-mobile-search-button').addEventListener('click', function(event){
+  document.querySelector('.header__up-mobile-search').classList.add('search__form-open');
+});
+document.querySelector('.header__up-mobile-search-close-button').addEventListener('click', function(event){
+  document.querySelector('.header__up-mobile-search').classList.remove('search__form-open');
+});
+
+document.addEventListener('click', function(e) {
+  let currentElement = e.target;
+  // closing search form by clicking at any element except search block (needed for 10214 layout)
+  if (!currentElement.closest('.header__up-container-right')) {
+      document.querySelector('.header__up-mobile-search').classList.remove('search__form-open');
+  }
+  // closing dropdowns item by clicking at any element except dropdowns container
+  if (!currentElement.closest('.header__down-dropdowns')) {
+      document.querySelectorAll('.header__down-dropdowns-item-btn').forEach(el => {
+          el.classList.remove('header__down-dropdowns-item-btn_active_true');
+      });
+      document.querySelectorAll('.header__down-dropdowns-item-list-container').forEach(el => {
+          el.classList.remove('header__down-dropdowns-item-list-container_active_true');
+      })
+  }
+
+})
+
+/* Down Header Menu */
+document.querySelectorAll('.header__down-dropdowns-item-btn').forEach(dropdownsItem => {
+    dropdownsItem.addEventListener('click', function() {
+        let btn = this;
+        let dropdown = btn.parentElement.querySelector('.header__down-dropdowns-item-list-container');
+        document.querySelectorAll('.header__down-dropdowns-item-btn').forEach(el=> {
+            if (el != btn) {
+                el.classList.remove('header__down-dropdowns-item-btn_active_true');
+            }
+        });
+        document.querySelectorAll('.header__down-dropdowns-item-list-container').forEach(el => {
+            if (el != dropdown) {
+                el.classList.remove('header__down-dropdowns-item-list-container_active_true');
+            }
+        })
+        btn.classList.toggle('header__down-dropdowns-item-btn_active_true')
+        dropdown.classList.toggle('header__down-dropdowns-item-list-container_active_true')
+    })
+})
+
+/* Down Header Menu Lists */
+document.querySelectorAll('.header__down-dropdowns-item-list').forEach(dropdownsItemList => {
+    new SimpleBar(dropdownsItemList, {
+        autoHide: false,
+        scrollbarMaxSize: 28,
+    })
+})
+
+/* Slider */
+const swiper = new Swiper('.slider__box', {
+  allowTouchMove: false,
+  loop: true,
+  effect: 'fade',
+  speed: 10000,
+  autoplay: {
+    delay: 1000
+  }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const dropdownLink = document.querySelectorAll('.nav__art-submenu');
@@ -12,100 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabsPainter = document.querySelectorAll('.accordion__painter-list');
   const painterLink = document.querySelectorAll('.accordion__painter-link');
   const painter = document.querySelectorAll('.painter');
-  const burger = document.querySelector('.burger');
-  const burgerLine = document.querySelector('.burger-line');
-  const nav = document.querySelector('.nav-top');
-  const search = document.querySelector('.search-mobile');
-  const searchBtn = document.querySelector('.search-button');
-  const searchInput = document.querySelector('.search-mobile__input');
-  const searchClose = document.querySelector('.search-mobile__close');
-
-
-
-
-  // dropdown
-
-  dropdownLink.forEach((el, index) => {
-    el.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      const dropdownSubmenuClassList = dropdownSubmenu[index].classList;
-      if (dropdownSubmenuClassList.contains('dropdown-visible')) {
-        dropdownSubmenuClassList.remove('dropdown-visible')
-        dropdownArrow[index].classList.remove('rotate-arrow')
-
-      } else {
-        dropdownSubmenu.forEach((el) => el.classList.remove('dropdown-visible'))
-        dropdownSubmenuClassList.add('dropdown-visible')
-        dropdownArrow.forEach((el) => el.classList.remove('rotate-arrow'))
-        dropdownArrow[index].classList.add('rotate-arrow')
-      }
-    });
-  });
-
-  window.onclick = function(event) {
-    if (!event.target.matches('.nav__art-submenu')) {
-      let dropdowns = document.getElementsByClassName('dropdown');
-      let i;
-      for (i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('dropdown-visible')) {
-          openDropdown.classList.remove('dropdown-visible');
-        }
-      }
-    }
-
-    if (!event.target.matches('.nav__art-submenu')) {
-      let dropArrows = document.getElementsByClassName('nav__art-arrow');
-      let i;
-      for (i = 0; i < dropArrows.length; i++) {
-        let openDropdown = dropArrows[i];
-        if (openDropdown.classList.contains('rotate-arrow')) {
-          openDropdown.classList.remove('rotate-arrow');
-        }
-      }
-    }
-
-    if (!event.target.matches('.dropdown')) {
-      let dropArrows = document.getElementsByClassName('dropdown');
-      let i;
-      for (i = 0; i < dropArrows.length; i++) {
-        let openDropdown = dropArrows[i];
-        if (openDropdown.classList.contains('dropdown--is-active')) {
-          openDropdown.classList.remove('dropdown--is-active');
-        }
-      }
-    }
-  }
-
-    // search
-
-    searchBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      searchInput.classList.add('search-mobile__input--active');
-      search.classList.add('search-active');
-      searchClose.classList.add('search-mobile__close-active');
-    })
-
-    searchClose.addEventListener('click', (e) => {
-      e.preventDefault();
-      searchInput.classList.remove('search-mobile__input--active');
-      search.classList.remove('search-active');
-      searchClose.classList.remove('search-mobile__close-active');
-    })
-
-    window.addEventListener('click', (event) => {
-      if (!search.contains(event.target)) searchInput.classList.remove('search-mobile__input--active');
-      if (!search.contains(event.target)) search.classList.remove('search-active');
-      if (!search.contains(event.target)) searchClose.classList.remove('search-mobile__close-active');
-    });
-
-    // burger
-
-    burger.addEventListener('click', (e) => {
-      nav.classList.toggle('open-menu');
-      burgerLine.classList.toggle('burger-line--active');
-    })
 
   // Select
 
@@ -166,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       zoom: 14
     });
 
+    myMap.behaviors.disable("scrollZoom");
     var myPlacemark = new ymaps.Placemark([55.75846306898368,37.601079499999905], {}, {
       iconLayout: 'default#image',
       iconImageHref: 'img/placemark.svg',
@@ -269,5 +263,161 @@ new JustValidate('.contacts-form', {
   },
 })
 
+let gallerySlider = new Swiper(".gallery__swiper-container", {
+  slidesPerView: 1,
+  grid: {
+    rows: 1,
+    fill: "row"
+  },
+  spaceBetween: 20,
+  pagination: {
+    el: ".gallery__swiper-pagination",
+    type: "fraction"
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    561: {
+      slidesPerGroup: 3,
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+      slidesPerGroup: 3
+    }
+  },
+
+  a11y: false,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true
+  },
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  slideVisibleClass: "slide-visible",
+
+  on: {
+    init: function () {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains("slide-visible")) {
+          slide.tabIndex = "-1";
+        } else {
+          slide.tabIndex = "";
+        }
+      });
+    },
+    slideChange: function () {
+      this.slides.forEach((slide) => {
+        if (!slide.classList.contains("slide-visible")) {
+          slide.tabIndex = "-1";
+        } else {
+          slide.tabIndex = "";
+        }
+      });
+    }
+  }
+});
+
+// events slider
+
+const eventsSlider = document.querySelector('.events__slider-container');
+
+var eventsSWider = new Swiper(eventsSlider, {
+  slideClass: ('events__item'),
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: '.events__button-next',
+    prevEl: '.events__button-prev',
+  },
+
+  breakpoints:{
+
+    100: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      allowTouchMove: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    },
+
+    560: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+      allowTouchMove: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    },
+
+    1000: {
+      slidesPerView: 3,
+      slidesPerGroup: 2,
+      spaceBetween: 27,
+      allowTouchMove: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    },
+
+    1225:{
+      spaceBetween: 50,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+    }
+  }
+})
+
+
+// partners swiper
+
+const partnersSlider = document.querySelector('.partners__swiper-container');
+
+var partnersSwiper = new Swiper(partnersSlider, {
+  slideClass: ('partners__swiper-slide'),
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  loop: true,
+  spaceBetween: 30,
+
+  navigation: {
+    nextEl: '.partners__button-next',
+    prevEl: '.partners__button-prev',
+  },
+
+  breakpoints:{
+
+    668: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+    },
+
+   1000: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 50,
+    },
+
+    1200:{
+      spaceBetween: 50,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+    }
+  }
+})
 
 
