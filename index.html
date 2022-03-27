@@ -249,10 +249,10 @@
           <div class="header__down-desktop-search">
             <form class="header__down-desktop-search__form" action="https://jsonplaceholder.typicode.com/posts"
               method="POST" autocomplete="on">
+              <button class="header__down-desktop-search__form__btn-submit" type="submit"
+                aria-label="начать поиск"></button>
               <input class="header__down-desktop-search__form-field" type="text" name="query"
                 placeholder="Поиск по сайту" required>
-              <button class="header__down-desktop-search__form__btn-submit" tabindex="-2" type="submit"
-                aria-label="начать поиск"></button>
             </form>
           </div>
         </div>
@@ -327,30 +327,58 @@
           </div>
           <div class="gallery__swiper-container swiper-container">
             <div class="swiper-wrapper">
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-1.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-1-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-1-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-1-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-1.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
 
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-2.jpg" alt="картина Яна ван Хейсума - Цветы и плоды">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-2-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-2-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-2-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-2.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
 
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-3.jpg" alt="картина Фрагонара - Утес слепого">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-3-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-3-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-3-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-3.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
 
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-4.jpg" alt="картина Ивана Крамского - незнакомка">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-4-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-4-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-4-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-4.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
 
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-5.jpg"
-                  alt="картина Питера Пауля Рубенса - Самсон и Далила">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-5-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-5-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-5-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-5.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
 
-              <a class="gallery__swiper-slide swiper-slide">
-                <img class="gallery__slide-img" src="img/gallary-6.jpg"
-                  alt="картина Генриха Семирадского – Игра в кости">
+              <a href="#" class="gallery__swiper-slide swiper-slide">
+                <picture>
+                  <source srcset="img/gallery-6-320.jpg" media="(max-width: 480px)">
+                  <source srcset="img/gallary-6-768.jpg" media="(max-width: 960px)">
+                  <source srcset="img/gallary-6-1024.jpg" media="(max-width: 1360px)">
+                  <img class="gallery__slide-img" src="img/gallary-6.jpg" alt="картина Карла Брюллова - Итальянский полдень">
+                </picture>
               </a>
             </div>
           </div>
@@ -397,7 +425,6 @@
           <div class="painter" data-tabs-target="Bissolo">
             <img class="painter__photo" src="img/paint.jpg" alt="Биссоло, Франческо">
             <h3 class="painter__name">Биссоло, Франческо</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
             <p class="painter__info">Сын художника. Ученик Джованни Беллини. С&nbsp;1490 переехал в&nbsp;мастерскую
               Беллини. С&nbsp;1492 по&nbsp;1530 год работал в&nbsp;Венеции. Помогал учителю в&nbsp;работе над украшением
               Большого зала Совета Дворца дожей (Венеция). Принимал участие в&nbsp;создании украшений Церкви Иль
@@ -412,7 +439,6 @@
           <div class="painter" data-tabs-target="Giovanni_Antonio_Boltraffio">
             <img class="painter__photo" src="img/paint.jpg" alt="Джованни Антонио Больтраффио">
             <h3 class="painter__name">Джованни Антонио Больтраффио</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
             <p class="painter__info">Итальянский художник Высокого Возрождения. Его первое произведение
               &laquo;Воскресение Христа, святой Леонард и&nbsp;святая Лючия&raquo; выполнено в&nbsp;1491 году совместно
               с&nbsp;Марко д&rsquo;Оджоно для миланской церкви Сан-Джованни-сул-Муро. Был придворным художником Лодовико
@@ -421,51 +447,51 @@
 
           <div class="painter" data-tabs-target="Francesco_Bonsignori">
             <img class="painter__photo" src="img/paint.jpg" alt="Франческо Бонсиньори">
-            <h3 class="painter__name">Франческо Бонсиньори</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Raffaello_Botticini">
             <img class="painter__photo" src="img/paint.jpg" alt="Рафаэль Боттичини">
-            <h3 class="painter__name">Рафаэль Боттичини</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Bartolommeo">
             <img class="painter__photo" src="img/paint.jpg" alt="Брамантино">
-            <h3 class="painter__name">Брамантино</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Ludovico_Brea">
             <img class="painter__photo" src="img/paint.jpg" alt="Людовико Бреа">
-            <h3 class="painter__name">Людовико Бреа</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Biagio_Antonio">
             <img class="painter__photo" src="img/paint.jpg" alt="Бьяджо д’Антонио Туччи">
-            <h3 class="painter__name">Бьяджо д’Антонио Туччи</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Vecchietta">
             <img class="painter__photo" src="img/paint.jpg" alt="Веккьетта">
-            <h3 class="painter__name">Веккьетта</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Andrea_del_Verrocchio">
             <img class="painter__photo" src="img/paint.jpg" alt="Андреа дель Верроккьо">
-            <h3 class="painter__name">Андреа дель Верроккьо</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter painter-content-active" data-tabs-target="Domenico_Ghirlandaio">
@@ -482,86 +508,86 @@
 
           <div class="painter" data-tabs-target="Benozzo_Gozzoli">
             <img class="painter__photo" src="img/paint.jpg" alt="Беноццо Гоццоли">
-            <h3 class="painter__name">Беноццо Гоццоли</h3>
-            <p class="painter__years-life">Тут должна быть дата</p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Francesco_Granacci">
             <img class="painter__photo" src="img/paint.jpg" alt="Франческо Граначчи">
-            <h3 class="painter__name">Франческо Граначчи</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Gregorio_di_Cecco">
             <img class="painter__photo" src="img/paint.jpg" alt="Грегорио ди Чекко">
-            <h3 class="painter__name">Грегорио ди Чекко</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Giovanni_da_Udine">
             <img class="painter__photo" src="img/paint.jpg" alt="Джованни да Удине">
-            <h3 class="painter__name">Джованни да Удине</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Giovanni_di_Paolo">
             <img class="painter__photo" src="img/paint.jpg" alt="Джованни ди Паоло">
-            <h3 class="painter__name">Джованни ди Паоло</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Giorgione">
             <img class="painter__photo" src="img/paint.jpg" alt="Джорджоне">
-            <h3 class="painter__name">Джорджоне</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Tarantino_Bernardo">
             <img class="painter__photo" src="img/paint.jpg" alt="Парентино Бернардо">
-            <h3 class="painter__name">Парентино Бернардо</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Pesellino">
             <img class="painter__photo" src="img/paint.jpg" alt="Пезеллино">
-            <h3 class="painter__name">Пезеллино</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Pietro_Perugino">
             <img class="painter__photo" src="img/paint.jpg" alt="Пьетро Перуджино">
-            <h3 class="painter__name">Пьетро Перуджино</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Peruzzi_Baldassare">
             <img class="painter__photo" src="img/paint.jpg" alt="Перуцци Бальдассаре">
-            <h3 class="painter__name">Перуцци Бальдассаре</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Pisanello">
             <img class="painter__photo" src="img/paint.jpg" alt="Пизанелло">
-            <h3 class="painter__name">Пизанелло</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="painter" data-tabs-target="Pinturicchio">
             <img class="painter__photo" src="img/paint.jpg" alt="Пинтуриккьо">
-            <h3 class="painter__name">Пинтуриккьо</h3>
-            <p class="painter__years-life">Тут должна быть дата </p>
-            <p class="painter__info">Тут должна быть биография, но к сожалению автор ленивый. </p>
+            <h3 class="painter__name">Что мы о нём знаем?</h3>
+            <p class="painter__info">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть! </p>
+            <a class="painter__gallery" href="#gallery"> В галерею</a>
           </div>
 
           <div class="accordion">
@@ -784,12 +810,11 @@
               <a href="#" class="events__more">Подробнее</a>
             </div>
           </div>
-
         </div>
-        <div class="swiper-button-prev events__button-prev"></div>
-        <div class="swiper-button-next events__button-next"></div>
         <div class="swiper-pagination"></div>
       </div>
+      <div class="swiper-button-prev events__button-prev"></div>
+      <div class="swiper-button-next events__button-next"></div>
     </section>
 
     <section class="projects container partners" id="projects">
@@ -799,7 +824,7 @@
         деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые
         государства смешаны с не уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за&nbsp;чего
         возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское
-        <button class="tooltip tooltip-1">
+        <button class="tooltip tooltip-1" data-tippy-content="Пример современных тенденций - современная методология разработки">
           <svg class="tooltip-marker" width="16" height="16">
             <g>
               <path class="tooltip-marker__circle"
@@ -812,7 +837,7 @@
 
         обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых
         решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены
-        <button class="tooltip tooltip-2">
+        <button class="tooltip tooltip-2" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции">
           <svg class="tooltip-marker" width="16" height="16">
             <g>
               <path class="tooltip-marker__circle"
@@ -825,7 +850,7 @@
 
         исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
 
-        <button class="tooltip tooltip-3">
+        <button class="tooltip tooltip-3" data-tippy-content="В стремлении повысить качество">
           <svg class="tooltip-marker" width="16" height="16">
             <g>
               <path class="tooltip-marker__circle"
