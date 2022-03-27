@@ -156,8 +156,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function init(){
     var myMap = new ymaps.Map("map", {
       center: [55.75846306898368,37.601079499999905],
-      zoom: 14
-    });
+      zoom: 14,
+      controls: ['geolocationControl', 'zoomControl']
+    },
+    {
+      suppressMapOpenBlock: true,
+      geolocationControlSize: "large",
+      geolocationControlPosition:  { top: "360px", right: "20px" },
+      geolocationControlFloat: 'none',
+      zoomControlSize: "small",
+      zoomControlFloat: "none",
+      zoomControlPosition: { top: "270px", right: "20px" }
+    }
+  );
+
 
     myMap.behaviors.disable("scrollZoom");
     var myPlacemark = new ymaps.Placemark([55.75846306898368,37.601079499999905], {}, {
@@ -192,28 +204,11 @@ $(document).ready(function(){
 
 
 
-
-tippy('.tooltip-1', {
-  content: 'Пример современных тенденций - современная методология разработки',
-  theme: 'tooltip-theme',
-  trigger: 'click',
-  trigger: 'focus',
-});
-
-tippy('.tooltip-2', {
-  content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
-  theme: 'tooltip-theme',
-  trigger: 'click',
-  trigger: 'focus',
-});
-
-tippy('.tooltip-3', {
-  content: 'В стремлении повысить качество',
-  theme: 'tooltip-theme',
-  trigger: 'click',
-  trigger: 'focus',
-});
-
+(() => {
+  tippy(".tooltip", {
+    theme: 'tooltip-theme',
+  });
+})();
 // validate
 
 var selector = document.querySelector("input[type='tel']");
