@@ -1317,7 +1317,7 @@ ul {
 }
 
 .accordion__btn.ui-accordion-header-active .accordion__arrow-btn::after {
-  top: 20px;
+  top: 13px !important;
   transform: rotate(45deg);
 }
 
@@ -3032,7 +3032,7 @@ ul {
     }
 
     .accordion__arrow-btn::after {
-      top: 13px !important;
+      top: 8px !important;
       left: 10px;
       width: 7px;
       height: 7px;
