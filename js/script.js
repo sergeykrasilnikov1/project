@@ -357,7 +357,7 @@ var eventsSWider = new Swiper(eventsSlider, {
       },
     },
 
-    1000: {
+    970: {
       slidesPerView: 3,
       slidesPerGroup: 2,
       spaceBetween: 27,
@@ -368,7 +368,7 @@ var eventsSWider = new Swiper(eventsSlider, {
       },
     },
 
-    1225:{
+    1030:{
       spaceBetween: 50,
       slidesPerView: 3,
       slidesPerGroup: 1,
